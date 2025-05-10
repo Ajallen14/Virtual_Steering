@@ -20,3 +20,11 @@ class HardwareInput(ctypes.Structure):
     ("wParamL", ctypes.c_short),
     ("wParamh", ctypes.c_ushort)]
 
+class MouseInput(ctypes.Structure):
+    _fields_ = [("dx", ctypes.c_long),
+    ("dy", ctypes.c_long),
+    ("mouseData", ctypes.c_ulong),
+    ("dwFlags", ctypes.c_ulong),
+    ("time", ctypes.c_ulong),
+    ("dwExtraInfo", PUL)]
+

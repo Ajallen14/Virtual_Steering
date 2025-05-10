@@ -36,7 +36,13 @@ class Input_I(ctypes.Union):
 def press_key(key):
     extra = ctypes.c_ulong(0)
     ii_ = Input_I()
-    ii_.ki = KeyBdInput(0, key[key], 0x008, 0, ctypes.pointer(extra))
+    ii_.ki = KeyBdInput(0, key[key], 0x0008, 0, ctypes.pointer(extra))
     x = Input(ctypes.c_ulong(i), ii_)
     ctypes.windll.user32.SendInput(1, ctypes.pointer(x), ctypes.sizeof(x))
 
+def realease_key(key):
+    extra = ctypes.c_ulong(0)
+    ii_ = Input_I()
+    ii_.ki = KeyBdInput(0, keys[key], 0x0008 | 0x0002, 0, ctypes.pointer(extra))
+    x = Input(ctypes.c_ulong(1), ii_)
+    ctypes.windll.user32.SendInput(1, ctypes.pointer(x), ctypes.sizeof(x))

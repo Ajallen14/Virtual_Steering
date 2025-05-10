@@ -28,3 +28,8 @@ class MouseInput(ctypes.Structure):
     ("time", ctypes.c_ulong),
     ("dwExtraInfo", PUL)]
 
+class Input_I(ctypes.Union):
+    _fields_ = [("ki", KeyBdInput),
+    ("mi", MouseInput),
+    ("hi", HardwareInput)]
+

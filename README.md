@@ -46,3 +46,16 @@ You can adjust these parameters in steering.py:
 * **STEERING_SENSITIVITY**: Higher values require more pronounced hand movements to trigger turns
 * **CIRCLE_RADIUS**: Size of the steering visualization circle
 * **LINE_THICKNESS**: Thickness of the steering visualization lines
+
+# Notes
+* Works best in well-lit environments
+* Requires both hands to be visible for steering control
+* Only works on Windows due to the key input implementation
+* Make sure no other applications are using the webcam while this is running
+
+# Troubleshooting
+If keys aren't being pressed:
+* Check that your game/application window is active
+* Verify the program has proper permissions
+* Try adjusting the sensitivity if gestures aren't being detected properly
+
